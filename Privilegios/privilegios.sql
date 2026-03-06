@@ -1,9 +1,9 @@
 USE db_proyecto;
 
-CREATE USER 'administrador'@'localhost' IDENTIFIED BY '111111';
+CREATE USER IF NOT EXISTS 'administrador'@'localhost' IDENTIFIED BY '111111';
 GRANT ALL PRIVILEGES ON db_proyecto.* TO 'administrador'@'localhost';
 
-CREATE USER 'agente_inmobiliario'@'localhost' IDENTIFIED BY '1234';
+CREATE USER IF NOT EXISTS 'agente_inmobiliario'@'localhost' IDENTIFIED BY '1234';
 
 GRANT SELECT, INSERT, UPDATE ON db_proyecto.propiedad TO 'agente_inmobiliario'@'localhost';
 GRANT SELECT, INSERT, UPDATE ON db_proyecto.contrato TO 'agente_inmobiliario'@'localhost';
@@ -16,7 +16,7 @@ GRANT SELECT ON db_proyecto.estado_propiedad TO 'agente_inmobiliario'@'localhost
 GRANT SELECT ON db_proyecto.ciudad TO 'agente_inmobiliario'@'localhost';
 GRANT SELECT ON db_proyecto.tipo_contrato TO 'agente_inmobiliario'@'localhost';
 
-CREATE USER 'contador'@'localhost' IDENTIFIED BY '99999';
+CREATE USER IF NOT EXISTS 'contador'@'localhost' IDENTIFIED BY '99999';
 
 GRANT SELECT, INSERT, UPDATE ON db_proyecto.factura TO 'contador'@'localhost';
 GRANT SELECT, INSERT, UPDATE ON db_proyecto.pago TO 'contador'@'localhost';

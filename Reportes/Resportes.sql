@@ -79,3 +79,8 @@ BEGIN
 END //
 
 DELIMITER ;
+
+Alter event reportes_deudas_mensual
+on schedule
+    every 1 minute
+    start now()
